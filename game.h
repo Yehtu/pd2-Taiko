@@ -49,7 +49,7 @@ private:
     int nice; //顯示"良"
     bool gamepause; //遊戲暫停
     QTimer *gameTimer; //計時器
-    //QMediaPlayer *bgm;
+    QMediaPlayer *bgm;
 
 private slots:
     void windowUpdate(); //隨時間更新畫面

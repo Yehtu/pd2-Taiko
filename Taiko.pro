@@ -6,6 +6,7 @@
 
 QT       += core gui
 QT       += multimedia
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Taiko
@@ -14,13 +15,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    game.cpp
+    game.cpp \
+    how.cpp
 
 HEADERS  += mainwindow.h \
-    game.h
+    game.h \
+    how.h
 
 FORMS    += mainwindow.ui \
-    game.ui
+    game.ui \
+    how.ui
 
 RESOURCES += \
     img.qrc

@@ -31,6 +31,7 @@ public:
     QLabel *label;
     QPushButton *PlayButton;
     QPushButton *ExitButton;
+    QPushButton *informButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -48,7 +49,7 @@ public:
         label->setPixmap(QPixmap(QString::fromUtf8(":/img/menu.jpg")));
         PlayButton = new QPushButton(centralWidget);
         PlayButton->setObjectName(QStringLiteral("PlayButton"));
-        PlayButton->setGeometry(QRect(380, 370, 90, 45));
+        PlayButton->setGeometry(QRect(380, 365, 100, 35));
         QFont font;
         font.setFamily(QStringLiteral("Comic Sans MS"));
         font.setPointSize(18);
@@ -58,9 +59,19 @@ public:
         PlayButton->setStyleSheet(QStringLiteral("color: rgb(0, 0, 127);"));
         ExitButton = new QPushButton(centralWidget);
         ExitButton->setObjectName(QStringLiteral("ExitButton"));
-        ExitButton->setGeometry(QRect(380, 435, 90, 45));
+        ExitButton->setGeometry(QRect(380, 455, 100, 35));
         ExitButton->setFont(font);
         ExitButton->setStyleSheet(QStringLiteral("color: rgb(0, 0, 127);"));
+        informButton = new QPushButton(centralWidget);
+        informButton->setObjectName(QStringLiteral("informButton"));
+        informButton->setGeometry(QRect(360, 410, 140, 35));
+        QFont font1;
+        font1.setFamily(QStringLiteral("Comic Sans MS"));
+        font1.setPointSize(16);
+        font1.setBold(true);
+        font1.setWeight(75);
+        informButton->setFont(font1);
+        informButton->setStyleSheet(QStringLiteral("color: rgb(0, 0, 127);"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -82,8 +93,9 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         label->setText(QString());
-        PlayButton->setText(QApplication::translate("MainWindow", "play", 0));
+        PlayButton->setText(QApplication::translate("MainWindow", "Start", 0));
         ExitButton->setText(QApplication::translate("MainWindow", "exit", 0));
+        informButton->setText(QApplication::translate("MainWindow", "how to play", 0));
     } // retranslateUi
 
 };

@@ -13,6 +13,14 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::on_informButton_clicked()
+{
+    h = new how();
+    h->setWindowTitle("Information");
+    h->setWindowIcon(QIcon(":/img/icon.png"));
+    h->show();
+}
+
 void MainWindow::on_ExitButton_clicked()
 {
     close();

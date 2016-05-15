@@ -34,9 +34,9 @@
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>370</y>
-      <width>90</width>
-      <height>45</height>
+      <y>365</y>
+      <width>100</width>
+      <height>35</height>
      </rect>
     </property>
     <property name="font">
@@ -51,16 +51,16 @@
      <string notr="true">color: rgb(0, 0, 127);</string>
     </property>
     <property name="text">
-     <string>play</string>
+     <string>Start</string>
     </property>
    </widget>
    <widget class="QPushButton" name="ExitButton">
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>435</y>
-      <width>90</width>
-      <height>45</height>
+      <y>455</y>
+      <width>100</width>
+      <height>35</height>
      </rect>
     </property>
     <property name="font">
@@ -76,6 +76,30 @@
     </property>
     <property name="text">
      <string>exit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="informButton">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>410</y>
+      <width>140</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 127);</string>
+    </property>
+    <property name="text">
+     <string>how to play</string>
     </property>
    </widget>
   </widget>

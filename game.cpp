@@ -6,14 +6,14 @@ game::game(QWidget *parent) :
     ui(new Ui::game)
 {
     ui->setupUi(this);
-    //bgm = new QMediaPlayer();
-    //bgm->setMedia(QUrl(":/img/flower.mp3"));
+    bgm = new QMediaPlayer();
+    bgm->setMedia(QUrl("qrc:/img/f.mp3"));
     Init(); //初始化遊戲介面
 }
 
 void game::Init()
 {
-    //bgm->play(); //background music
+    bgm->play(); //background music
     score = 0;
     combo = 0;
     timeCount = -300; //初始化顯示計時器參數，-300為開始前倒數3秒
@@ -57,6 +57,27 @@ void game::paintEvent(QPaintEvent *)
             case 7: painter.drawPixmap(40, -35, 250, 250, QPixmap(":/img/fire7.png")); break;
             case 0: painter.drawPixmap(36, -36, 250, 250, QPixmap(":/img/fire8.png")); break;
         }
+    }
+
+    if(combo >= 5 )
+    {
+        switch(combo%14)
+        {
+            case 1: painter.drawPixmap(100,150,80,80,QPixmap(":/img/b2.png"));break;
+            case 2: painter.drawPixmap(110,150,80,80,QPixmap(":/img/b3.png"));break;
+            case 3: painter.drawPixmap(120,150,80,80,QPixmap(":/img/b4.png"));break;
+            case 4: painter.drawPixmap(130,150,80,80,QPixmap(":/img/b5.png"));break;
+            case 5: painter.drawPixmap(140,150,80,80,QPixmap(":/img/b6.png"));break;
+            case 6: painter.drawPixmap(150,150,80,80,QPixmap(":/img/b7.png"));break;
+            case 7: painter.drawPixmap(160,150,80,80,QPixmap(":/img/b8.png"));break;
+            case 8: painter.drawPixmap(170,150,80,80,QPixmap(":/img/b9.png"));break;
+            case 9: painter.drawPixmap(180,150,80,80,QPixmap(":/img/b10.png"));break;
+            case 10: painter.drawPixmap(190,150,80,80,QPixmap(":/img/b11.png"));break;
+            case 11: painter.drawPixmap(200,150,80,80,QPixmap(":/img/b12.png"));break;
+            case 12: painter.drawPixmap(210,150,80,80,QPixmap(":/img/b13.png"));break;
+            case 13: painter.drawPixmap(220,150,80,80,QPixmap(":/img/b14.png"));break;
+            case 0: painter.drawPixmap(230,150,80,80,QPixmap(":/img/b1.png"));break;
+         }
     }
 
     for(int i = stop_i-1 ; i >= start_i ; --i) //由後往前生成，避免覆蓋前面的
@@ -112,7 +133,7 @@ void game::paintEvent(QPaintEvent *)
     }
     if(gamepause) //暫停圖示
     {
-        painter.drawPixmap(130, 10, 200, 200, QPixmap(":/img/pause.png"));
+        painter.drawPixmap(130, 20, 200, 200, QPixmap(":/img/pause.png"));
         painter.drawPixmap(350, 150, 400, 70, QPixmap(":/img/hint.png"));
     }
 }
@@ -267,7 +288,7 @@ void game::windowUpdate()
     }
     if(timeDisplay == 0) //time's up
     {
-        //bgm->stop(); //stop music
+        bgm->stop(); //stop music
         QString result;
         QTextStream(&result) << "Your score : " << score << "\n\n  Play again ?";
         //QMessageBox::setIconPixmap(QPixmap(":/img/meg.png"));
